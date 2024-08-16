@@ -53,8 +53,10 @@ public class BorrowerController {
 
         // Update the book's availability status
         var book = bookService.findBookByID(bookId.intValue()).orElse(null);
-        assert book != null;
-        book.setAvailable(true);
+       if(book != null){
+           book.setAvailable(true);
+       }
+
         bookService.addBook(book);
 
         return new ResponseEntity<>("Book returned successfully", HttpStatus.OK);

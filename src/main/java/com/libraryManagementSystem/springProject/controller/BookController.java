@@ -25,14 +25,14 @@ public class BookController {
         return bookService.addBook(book);
     }
 
-    @GetMapping("/{iD}")
-    public Optional<Books> getBookByiD(@PathVariable int iD) {
-        return bookService.findBookByID(iD);
+    @GetMapping("/{id}")
+    public Optional<Books> getBookByiD(@PathVariable int id) {
+        return bookService.findBookByID(id);
     }
 
-    @DeleteMapping("/{iD}")
-    public void deleteBook(@PathVariable int iD) {
-        bookService.deleteBook(iD);
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable int id) {
+        bookService.deleteBook(id);
     }
 
 
