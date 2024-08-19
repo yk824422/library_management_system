@@ -36,6 +36,7 @@ public class BorrowerController {
             Borrowers borrower = new Borrowers(userId, bookId);
             borrowerService.save(borrower);
             book.setAvailable(false);
+            //why do we need to add the book again? the function should be save book or update book
             bookService.addBook(book);
             return new ResponseEntity<>("Book borrowed successfully", HttpStatus.CREATED);
         }
